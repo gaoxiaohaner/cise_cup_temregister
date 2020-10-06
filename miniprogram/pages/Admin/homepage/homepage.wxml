@@ -1,0 +1,110 @@
+<!--pages/index/enterprise_manage.wxml-->
+<view class="bigbox">
+    <view class="store_top">
+        <view class="page_tit b">{{timeday}}已登记
+            <text class="b">{{ data1 }}</text> 人,未登记
+            <text class="b">{{ data5-data1 }}</text> 人
+        </view>
+        <view wx:if="{{admin==0}}" class="store_name b"  >{{fuzeren_name}}组今日异常情况</view>
+         <view wx:if="{{admin==1}}" bindtap="send_hot_warning" class="store_name b" >{{adminname}}</view>
+         <view wx:if="{{admin==2}}" class="store_name b" >{{adminname}}</view>
+        <view class="people_list">
+ 
+            <view class="people_li" bindtap="yichanginfo">
+                <view class="li_icon">
+                    <image src="/img/icon1.png"></image>
+                </view>
+                <view class="li_txt b">今日体温超过37.3℃共 <text class="b" style="color:{{data2+data3+data4>0?'red':''}}" >{{ data2+data3+data4 }}</text> 人次</view>
+            </view>
+            <view class="people_li" bindtap="yichanginfo">
+                <view class="li_icon">
+                    <image src="/img/icon2.png"></image>
+                </view>
+                <view class="li_txt b">早上异常 <text class="b" style="color:{{data2>0?'red':''}}" >{{ data2 }}</text> 人，
+                中午异常 <text class=" b" style="color:{{data3>0?'red':''}}" >{{ data3 }}</text> 人，
+                晚上异常 <text class=" b" style="color:{{data4>0?'red':''}}" >{{ data4 }}</text> 人
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <view class="store_fun">
+        <button hover-class="btn-class" class="store_li" bindtap="create_qrcode">
+            <view class="li_icon"><image src="/img/store_icon1.png"></image></view>
+            <view class="b">打印登记码</view>
+        </button>
+        <button hover-class="btn-class" class="store_li" wx:if="{{admin==0}}" bindtap="down_today_excel">
+            <view class="li_icon"><image src="/img/store_icon2.png"></image></view>
+            <view class="b">今日登记列表导出</view>
+        </button>
+<!-- 证明是导员-->
+        <button hover-class="btn-class" class="store_li" wx:if="{{admin==1}}" bindtap="down_daoyuan_today_excel">
+            <view class="li_icon"><image src="/img/store_icon2.png"></image></view>
+            <view class="b">今日登记列表导出</view>
+        </button>
+        <button hover-class="btn-class" class="store_li" wx:if="{{admin==2}}" bindtap="down_college_today_excel">
+            <view class="li_icon"><image src="/img/store_icon2.png"></image></view>
+            <view class="b">今日登记列表导出</view>
+        </button>
+
+        <button hover-class="btn-class" class="store_li" bindtap="go_list">
+            <view class="li_icon"><image src="/img/store_icon3.png"></image></view>
+            <view class="b">今日已登记列表</view>
+        </button>
+        <button class="store_li" hover-class="btn-class" wx:if="{{admin==3}}" bindtap="analysis">
+            <view class="li_icon"><image src="/img/fenxi.png"></image></view>
+            <view class="b">登记情况分析</view>
+        </button>
+
+        <button hover-class="btn-class" class="store_li"  data-type="1" bindtap="chooseDate">
+            <view class="li_icon"><image src="/img/store_icon2.png"></image></view>
+            <view class="b">历次登记信息导出</view>
+        </button>
+        <button hover-class="btn-class" class="store_li"  wx:if="{{admin==3}}" bindtap="uploadexcel">
+            <view class="li_icon"><image src="/img/store_icon2.png"></image></view>
+            <view class="b">上传学生名单</view>
+        </button>
+
+        <button hover-class="btn-class" class="store_li"  wx:if="{{admin==3}}" data-type="1" bindtap="correct_notices">
+            <view class="li_icon"><image src="/img/store_icon2.png"></image></view>
+            <view class="b">修改主页公告</view>
+        </button>
+
+        <button hover-class="btn-class" class="store_li"  wx:if="{{admin==3}}"  data-type="2" bindtap="correct_notices">
+            <view class="li_icon"><image src="/img/store_icon2.png"></image></view>
+            <view class="b">修改管理公告</view>
+        </button>
+
+        <button hover-class="btn-class" class="store_li"  wx:if="{{admin!=0}}" bindtap="add_fuzeren">
+            <view class="li_icon"><image src="/img/store_icon3.png"></image></view>
+            <view class="b">添加负责人</view>
+        </button>
+        
+        
+        <button hover-class="btn-class" class="store_li"  wx:if="{{admin!=0}}" bindtap="fuzereninfo">
+            <view class="li_icon"><image src="/img/store_icon3.png"></image></view>
+            <view class="b">负责人信息</view>
+        </button>
+    
+        <button hover-class="btn-class" class="store_li"  bindtap="chooseDate"  data-type="2">
+            <view class="li_icon"><image src="/img/store_icon2.png"></image></view>
+            <view class="b">未交人员名单</view>
+        </button>
+        <button hover-class="btn-class" class="store_li" bindtap="weijiaolist">
+            <view class="li_icon"><image src="/img/store_icon3.png"></image></view>
+            <view class="b">今日未交人员列表</view>
+        </button>
+        
+    </view>
+
+</view>
+<!-- 这是弹出框-->
+<wh-authorCard isHidden="{{isHidden}}" link="{{fileUrl}}"   id="authorCardId"></wh-authorCard>
+
+<tui-datetime id="tui-dateTime-ctx" type="{{type}}" startYear="{{startYear}}" endYear="{{endYear}}" cancelColor="{{cancelColor}}" color="{{color}}" setDateTime="{{setDateTime}}" bindconfirm="change"></tui-datetime>
+
+
+<view class='cu-load load-modal' wx:if="{{loadModal}}">
+  <image src='https://7465-test-aam3w-1300056547.tcb.qcloud.la/CUP/cuplogo.jpg?sign=8042ec69872545d8e6615d1e9e100f69&t=1586532185' class='png' mode='aspectFit'></image>
+  <view class='gray-text'>加载中...</view>
+</view>

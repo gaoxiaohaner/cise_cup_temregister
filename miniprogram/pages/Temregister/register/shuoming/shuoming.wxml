@@ -1,0 +1,27 @@
+<!--pages/index/privacy_protocol.wxml-->
+<view class="bigbox">
+
+    <!-- <view class="title b">隐私协议</view> -->
+    <view class="p_li">
+        <text decode=""> </text>
+    </view>
+
+    <view class="lit_tit b">
+        <text decode class="b">1.体温测量时间</text>
+    </view>
+
+    <view class="p_li">
+        <text decode>a)早晨测量时间6.00-9:00；</text>
+    </view>
+    <view class="p_li">
+         <text decode>b)中午测量时间11.00-13:00；</text>
+    </view>
+    <view class="p_li">
+        <text decode>c)晚间测量时间18.00-21:00；</text>
+    </view>
+    <view class="p_li1">
+        <text decode>早晨以及中午体温自测，请保证真实有效，后果自负。晚间体温由各班负责人统一测量，请勿私自测量填写。</text>
+    </view>
+
+
+</view>

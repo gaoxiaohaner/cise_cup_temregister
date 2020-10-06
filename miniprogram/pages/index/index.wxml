@@ -1,0 +1,138 @@
+<view class="bigbox">
+ 
+    <!-- 自定义标题 -->
+    <view class="page_title {{ is_nav?'page_title_active':'' }}" style="height: {{ title_height }}px;">
+        <view class="b page_txt" style="height: {{ title_height }}px; line-height: {{ title_line_height }}px">CUP校园体温登记小助手</view>
+    </view>
+    <!-- wx:if="{{ !is_nav }}" -->
+    <!-- <cover-view class="page_title_active" style="height: {{ title_height }}px;" wx:else>
+        <cover-view class="b page_txt" style="height: {{ title_height }}px; line-height: {{ title_line_height }}px">疫情工具</cover-view>
+    </cover-view> -->
+
+    <view class="b page_height" style="height: {{ title_height }}px"></view>
+
+    <!-- <view class="banner_bj">
+        <image src="../../img/home_banner.png"></image>
+    </view> -->
+    <view style="width:100%;height:240rpx;"></view>
+
+    <view class="user_box" >
+<!-- 通知公告-->
+<view class='notice'>
+  <view class='notice-contain'>
+    <view class="notice-containTitle">公告栏</view>
+   <view class="tui-scorll-view" bindtap='detail'>
+      <view class="tui-notice {{animation?'tui-animation':''}}">{{notices}}</view>
+    </view>
+    </view>
+</view>
+
+        <button class="user_info" hover-class="btn-class" bindtap="">
+            <view class="info_left">
+                <open-data class="user_avatar" type="userAvatarUrl"></open-data>
+                <!-- <view class="user_avatar">
+                <image></image>
+            </view> -->
+                <open-data class="name_txt b" type="userNickName"></open-data>
+            </view>
+            <view class="right_icon">
+                <image src="../../img/right.png"></image>
+            </view>
+        </button>
+
+    </view>
+
+    <view style="background:#fff;">
+
+        <view class="txt_tit b">操作列表</view>
+
+        <button class="fun_li" hover-class="btn-class" bindtap="register">
+            <view class="fun_li_left">
+                <view class="left_icon">
+                    <image src="../../img/li_img1.png"></image>
+                </view>
+                <view class="left_texts">
+                    <view class="texts_tit b">体温登记</view>
+                    <view class="texts_txt">确保体温准确无误，发现异常请及时上报</view>
+                </view>
+            </view>
+            <view class="fun_li_right">
+                <image src="../../img/right.png"></image>
+            </view>
+        </button>
+ <!-- 
+        <button class="fun_li" hover-class="btn-class" bindtap="shuoming_display" data-type="2">
+            <view class="fun_li_left">
+                <view class="left_icon">
+                    <image src="../../img/li_img2.png"></image>
+                </view>
+                <view class="left_texts">
+                    <view class="texts_tit b">水卡使用说明</view>
+                    <view class="texts_txt">点击查看公寓内水卡使用手册</view>
+                </view>
+            </view>
+            <view class="fun_li_right">
+                <image src="../../img/right.png"></image>
+            </view>
+        </button>
+-->
+        <button class="fun_li"  hover-class="btn-class" bindtap="to_page" data-type="3">
+            <view class="fun_li_left">
+                <view class="left_icon">
+                    <image src="../../img/li_img3.png"></image>
+                </view>
+                <view class="left_texts">
+                    <view class="texts_tit b">管理员登录</view>
+                    <view class="texts_txt">管理员登录</view>
+                </view>
+            </view>
+            <view class="fun_li_right">
+                <image src="../../img/right.png"></image>
+            </view>
+        </button>
+<!-- 
+        <button hover-class="btn-class" bindtap="share" class="share_box">
+            <view class="share_btn">
+                <view class="share_btn_icon">
+                    <image src="../../img/home_share.png"></image>
+                </view>
+                <view>分享给有需要的同学</view>
+            </view>
+            <view class="share_box_txt">方便对石油大学学生公寓水卡系统进行数字化管理</view>
+        </button>
+-->
+        <button class="float_share" hover-class="btn-class" open-type="contact">
+            <image src="../../img/customer_service.png"></image>
+        </button>
+
+        <button hover-class="btn-class" class="register_icon" bindtap="go_register">
+            <image src="../../img/register.png"></image>
+        </button>
+<!-- 
+        <view class="btn_img" bindtap="go_xiaocx">
+            <image src="../../img/wx_btm.png"></image>
+        </view>
+        <view class="btn_txt" bindtap="go_xiaocx">高涵科技有限公司 技术支持</view>
+--> 
+        <view class="mask" catchtouchmove="true" wx:if="{{ is_share }}"></view>
+        <view class="poupon_box" wx:if="{{ is_share }}">
+            <view class="box_poster">
+                <image show-menu-by-longpress src="../../img/poster.png"></image>
+            </view>
+            <view class="box_close" bindtap="close_share">
+                <image src="../../img/close.png"></image>
+            </view>
+        </view>
+<!-- 这是说明书的部分-->
+        <view class="mask" catchtouchmove="true" wx:if="{{ is_shuoming }}"></view>
+            <view class="poupon_box" wx:if="{{ is_shuoming }}">
+            <view class="box_poster" bindtap="preview" data-url="cloud://cup-runjie.6375-cup-runjie-1302757407/图片/说明书.jpg">
+                <image show-menu-by-longpress src="cloud://cup-runjie.6375-cup-runjie-1302757407/图片/说明书.jpg"></image>
+            </view>
+            <view class="box_close" bindtap="close_shuoming">
+                <image src="../../img/close.png"></image>
+            </view>
+        </view>
+
+    </view>
+</view>

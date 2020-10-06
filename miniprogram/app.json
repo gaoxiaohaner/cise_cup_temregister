@@ -1,0 +1,32 @@
+{
+  "pages": [
+   
+    "pages/index/index",
+    "pages/Temregister/register/register",
+    "pages/Temregister/register/shuoming/shuoming",
+    "pages/Admin/homepage/homepage",  
+    "pages/Admin/notices/notices",  
+    "pages/Admin/analysis/analysis",
+    "pages/Admin/addfuzeren/addfuzeren", 
+    "pages/Admin/addfuzeren/fuzerenlist/fuzerenlist",
+    "pages/Admin/manage/manage",
+    "pages/Temregister/teminfo/teminfo",
+    "pages/Admin/teminfo/teminfo",
+    "pages/Admin/login/login",
+    "pages/Admin/addfuzeren/fuzereninfo/fuzereninfo",
+    "pages/Admin/yichanginfo/yichanginfo",
+    "pages/Admin/weijiaolist/weijiaolist"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "CUP校园体温登记小助手",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2",
+  "usingComponents": {  
+    "wh-authorCard": "/style/authorCard/wh-authorCard"
+  }
+}

@@ -1,0 +1,245 @@
+/* pages/index/create_enterprise.wxss */
+
+page {
+  background: #f9f9f9;
+}
+
+.inp_list {
+  padding: 0 40rpx;
+  background: #fff;
+}
+
+.inp_list .inp_li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 38rpx 0;
+}
+
+.inp_list .inp_li .li_left {
+  font-size: 30rpx;
+  color: #141414;
+}
+
+.inp_list .inp_li .li_before::before {
+  content: "*";
+  font-size: 30rpx;
+  color: #fc5244;
+}
+
+.place_txt {
+  font-size: 30rpx;
+  color: #c0c4cc;
+}
+
+.active_txt {
+  font-size: 30rpx;
+  color: #333;
+}
+
+.inp_list .inp_li .li_right {
+  text-align: right;
+  /* width: 70%; */
+  width: 500rpx;
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+
+.inp_list .inp_li .li_right .input {
+  font-size: 30rpx;
+  width: 100%;
+}
+
+.inp_list .inp_li .li_right .input_limit {
+  width: 200rpx;
+}
+
+.inp_list .inp_li .li_right .right_icon {
+  width: 14rpx;
+  height: 21rpx;
+  margin-left: 25rpx;
+}
+
+.inp_list .inp_li .li_right .send_code {
+  border: 1rpx solid #046dfe;
+  border-radius: 7rpx;
+  width: 190rpx !important;
+  height: 54rpx;
+  text-align: center;
+  line-height: 54rpx;
+  font-size: 26rpx;
+  color: #046dfe;
+  margin: 0;
+  margin-left: 40rpx;
+  padding: 0;
+  background: none;
+  font-weight: 400;
+}
+
+.inp_list .inp_li .li_right .send_codes {
+  border: 1rpx solid #c0c4cc;
+  color: #c0c4cc;
+  border-radius: 7rpx;
+  width: 170rpx;
+  height: 54rpx;
+  text-align: center;
+  line-height: 54rpx;
+  font-size: 26rpx;
+  margin-left: 40rpx;
+}
+
+.select_box {
+  margin: 63rpx 0 0 40rpx;
+  display: flex;
+  align-items: center;
+}
+
+.select_box .select_img {
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 20rpx;
+}
+
+.select_box .select_txt1 {
+  font-size: 26rpx;
+  color: #606266;
+}
+
+.select_box .select_txt2 {
+  font-size: 26rpx;
+  color: #046dfe;
+  text-decoration: underline;
+}
+
+.opening {
+  width: 670rpx !important;
+  height: 90rpx;
+  text-align: center;
+  line-height: 90rpx;
+  margin: 0 auto;
+  font-size: 30rpx;
+  color: #fff;
+  background: #046dfe;
+  border-radius: 45rpx;
+  margin-top: 70rpx;
+  padding: 0;
+}
+
+
+
+.tui-page-title {
+  width: 100%;
+  font-size: 48rpx;
+  font-weight: bold;
+  color: #333;
+  line-height: 42rpx;
+  padding: 40rpx;
+  box-sizing: border-box;
+}
+
+.tui-form {
+  padding-top: 50rpx;
+}
+
+.tui-view-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 40rpx;
+}
+
+.tui-cell-input {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding-top: 48rpx;
+  padding-bottom: 16rpx;
+}
+
+.tui-cell-input input {
+  flex: 1;
+  padding-left: 20rpx;
+}
+
+.tui-icon-close {
+  margin-left: auto;
+}
+
+
+.tui-cell-text {
+  width: 100%;
+  padding: 24rpx 30rpx;
+  box-sizing: border-box;
+  font-size: 24rpx;
+  color: #999;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tui-color-primary {
+  color: #5677fc;
+}
+
+.tui-btn-box {
+  width: 100%;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  margin-top: 80rpx;
+}
+
+
+.tui-login-way {
+  width: 100%;
+  font-size: 26rpx;
+  color: #5677fc;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  left: 0;
+  bottom: 80rpx;
+}
+
+.tui-login-way view {
+  padding: 12rpx 0;
+}
+
+
+.tui-auth-login {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 80rpx;
+  padding-top: 20rpx;
+}
+
+.tui-icon-platform {
+  width: 90rpx;
+  height: 90rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-left: 40rpx;
+}
+
+.tui-icon-platform::after {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  transform-origin: 0 0;
+  transform: scale(0.5, 0.5) translateZ(0);
+  box-sizing: border-box;
+  left: 0;
+  top: 0;
+  border-radius: 180rpx;
+  border: 1rpx solid #bfbfbf;
+}
+
+
+.tui-login-logo {
+  width: 60rpx;
+  height: 60rpx;
+}

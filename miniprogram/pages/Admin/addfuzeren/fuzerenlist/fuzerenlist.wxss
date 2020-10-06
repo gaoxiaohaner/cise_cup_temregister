@@ -1,0 +1,144 @@
+
+/* pages/index/physical_store.wxss */
+@import "../../../../style/colorui/main.wxss";
+@import "../../../../style/colorui/icon.wxss";
+page {
+  background: #f9f9f9;
+}
+
+.list_tit {
+  width: 100%;
+  height: 83rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 26rpx;
+  color: #959a9f;
+  background: #fff;
+  border-bottom: 1rpx solid #dedede;
+}
+
+.list_tit .tit_left {
+  margin-left: 37rpx;
+}
+
+.list_tit .tit_right {
+  margin-right: 37rpx;
+}
+
+.people_list {
+  padding: 0 35rpx;
+  background: #fff;
+}
+
+.people_list .people_li {
+  display: flex;
+  justify-content: space-between;
+  font-size: 26rpx;
+  color: #000;
+  padding: 36rpx 0;
+  border-bottom: 1rpx solid #dedede;
+}
+
+.people_list .people_li:last-child {
+  border: none;
+}
+
+.people_list .people_li .li_right_problem {
+  font-size: 26rpx;
+  color: #e6a23c;
+  max-width:312rpx;
+  text-align: right;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 27rpx 30rpx 35rpx;
+  background-color: #fff;
+}
+
+.search-bar-form {
+  flex: 1;
+  position: relative;
+  border-radius: 32rpx;
+  background: #f2f5f7;
+}
+
+.search-bar-box {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  height: 64rpx;
+  z-index: 1;
+}
+
+.search-bar-input {
+  line-height: normal;
+  width: 100%;
+  padding-left: 20rpx;
+  font-size: 30rpx;
+  color: #333;
+}
+
+.phcolor {
+  font-size: 30rpx;
+}
+
+
+
+.search-bar-label {
+  height: 64rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  border-radius: 32rpx;
+  color: #ccc;
+  background: #f2f5f7;
+}
+
+.icon-search {
+  position: relative;
+  height: 26rpx;
+  margin-right: 20rpx;
+  font-size: inherit;
+}
+
+.search-bar-text {
+  font-size: 30rpx;
+  line-height: 32rpx;
+}
+
+.cancel-btn {
+  padding-left: 30rpx;
+}
+
+.search-result::before {
+  display: none;
+}
+
+.search-result::after {
+  display: none;
+}
+.no_data_btn_refrush {
+  width: 290rpx;
+  height: 70rpx;
+  text-align: center;
+  line-height: 70rpx;
+  border: 2rpx solid #046dfe;
+  border-radius: 45rpx;
+  font-size: 28rpx;
+  color: #046dfe;
+  padding: 0;
+  font-weight: 400;
+  margin-top: 15px;
+}

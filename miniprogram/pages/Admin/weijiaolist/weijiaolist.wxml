@@ -1,0 +1,61 @@
+    <view class="search-bar">
+      <view class="search-bar-form">
+        <view class="search-bar-box">
+          <input disabled="true" confirm-type="search" class="search-bar-input" placeholder="输入所搜索的内容" placeholder-class="phcolor" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+          <view  wx:if="{{inputVal}}" bindtap="clearInput">
+            <icon type="clear" size="20"></icon>
+          </view>
+        </view>
+        <label class="search-bar-label" wx:if="{{!inputShowed}}" bindtap="showInput">
+          <view class="search-bar-text">输入搜索的内容</view>
+        </label>
+      </view>
+    </view> 
+
+    
+<view class="bigbox">
+    <view class="list_tit">
+        <view class="tit_left">姓名 | 宿舍号</view>
+        <view class="tit_right">手机号码 | 负责人</view>
+    </view> 
+<!-- 不搜索显示的东西-->
+  <view wx:if="{{!inputVal}}">
+    <view wx:if="{{ student_list.length > 0 }}">
+     <view class="people_list">
+        <view class="people_li" wx:for="{{ student_list }}" wx:key="kul" >
+            <view class="li_left">{{ item.student_name }}  |  {{ item.dormitory_number }}</view>
+            <view class="li_right">{{ item.mobile }}  |  {{item.fuzeren}}</view>
+        </view>
+       </view>
+         <button hover-class="btn-class" color="green" class="no_data_btn_refrush" wx:if="{{admin<=2}}" bindtap="tixing">一键提醒</button>
+    </view>
+    
+     <view class="no_data" wx:else>
+        <view class="no_data_img"><image src="/img/no_data.png"></image></view>
+        <view class="no_data_txt">暂无任何登记信息，可以通过分享登记码</view>
+        <button hover-class="btn-class" class="no_data_btn" bindtap="go_back">返回</button>
+    </view>
+  </view>
+    <!-- 搜索之后显示的东西-->
+    <view wx:if="{{inputVal}}">
+       <view class="people_list" wx:if="{{ search_student_list.length > 0 }}">
+        <view class="people_li" wx:for="{{ search_student_list }}" wx:key="kul" >
+                 <view class="li_left">{{ item.student_name }}  |  {{ item.dormitory_number }}</view>
+            <view class="li_right">{{ item.mobile }}  |  {{item.fuzeren}}</view>
+        </view>
+      </view>
+       <view class="no_data" wx:else>
+        <view class="no_data_img"><image src="/img/no_data.png"></image></view>
+        <view class="no_data_txt">搜索结果为空，请尝试更换搜索词</view>
+        <button hover-class="btn-class" class="no_data_btn" bindtap="go_back">返回</button>
+      </view>
+    </view>
+
+
+  
+</view>
+
+<view class='cu-load load-modal' wx:if="{{loadModal}}">
+  <image src='https://7465-test-aam3w-1300056547.tcb.qcloud.la/CUP/cuplogo.jpg?sign=8042ec69872545d8e6615d1e9e100f69&t=1586532185' class='png' mode='aspectFit'></image>
+  <view class='gray-text'>加载中...</view>
+</view>

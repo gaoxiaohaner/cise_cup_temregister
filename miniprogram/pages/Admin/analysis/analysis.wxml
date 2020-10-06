@@ -1,0 +1,11 @@
+<view class="container">
+	<view class="title">
+		<view wx:if="{{!isMainChartDisplay}}" class="back-btn back_color" bindtap="backToMainChart">返回</view>
+        <view wx:else class="back-btn">销售详情</view>
+        {{title_name}}
+	</view>
+    <canvas canvas-id="lineCanvas" disable-scroll="true" class="canvas" bindtouchstart="touchHandler"></canvas>
+
+    <view style="text-align:center">点击数据每一项查看详情</view>
+
+</view>

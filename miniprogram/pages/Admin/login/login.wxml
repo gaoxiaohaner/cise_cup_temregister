@@ -1,0 +1,33 @@
+
+
+<form bindsubmit="submit_data">
+<view class="container">
+		<view class="tui-page-title">管理端登录</view>
+		<view class="tui-form">
+			<view class="tui-view-input">
+				<tui-list-cell hover="{{false}}" lineLeft="{{false}}" backgroundColor="transparent">
+					<view class="tui-cell-input">
+						<tui-icon name="mobile" color="#6d7a87" size="20"></tui-icon>
+						<input	adjust-position="{{false}}"	name="adminID"  value="{{ adminID }}" placeholder="请输入账号"	placeholder-class="tui-phcolor"		bindinput="inputMobile"/>
+						<view class="tui-icon-close" hidden="{{!adminID}}" bindtap="clearInput" data-type="1"><tui-icon name="close-fill" size="16" color="#bfbfbf"></tui-icon></view>
+					</view>
+				</tui-list-cell>
+				<tui-list-cell hover="{{false}}" lineLeft="{{false}}" backgroundColor="transparent">
+					<view class="tui-cell-input">
+						<tui-icon name="pwd" color="#6d7a87" size="20"></tui-icon>
+						<input adjust-position="{{false}}"name="passward"  value="{{ passward }}" 	placeholder="请输入密码" password="{{true}}"	placeholder-class="tui-phcolor"	type="text"	maxlength="36"	bindinput="inputPwd"/>
+						<view class="tui-icon-close" hidden="{{!passward}}" bindtap="clearInput" data-type="2"><tui-icon name="close-fill" size="16" color="#bfbfbf"></tui-icon></view>
+					</view>
+				</tui-list-cell>
+			</view>
+			<view class="tui-cell-text">
+				<view class="tui-color-primary" hover-class="tui-opcity" hover-stay-time="150" bindtap="" data-type="1">负责人登录</view>
+				<view hover-class="tui-opcity" hover-stay-time="150">
+					没有账号？
+					<text class="tui-color-primary" bindtap="" data-type="2">返回</text>
+				</view>
+			</view>
+		</view>
+	</view>  
+    <button hover-class="btn-class"  disabled="{{disabled}}"  form-type="submit" class="opening">{{buttonname}}</button>
+</form>

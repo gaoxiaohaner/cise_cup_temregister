@@ -1,0 +1,37 @@
+<!--pages/index/create_enterprise.wxml-->
+<view class="bigbox">
+
+    <view class="store_top">
+        <view class="page_tit b">当前修改:
+            <text class="b">{{type==1?"主页":"管理端"}}</text>通知公告中
+        </view>
+    </view>
+
+    <form bindsubmit="submit_data">
+        <view class="inp_list">
+
+            <view class="inp_li">
+                <view class="li_left b li_before">公告内容</view>
+                <view class="li_right">
+                    <input  class="input" name="content" maxlength="500" value="{{ content }}" placeholder="请填写公告内容" placeholder-class="place_txt"></input>
+                </view>
+            </view>
+
+        <view class="people_li">
+                <view class="li_icon">
+                    <image src="/img/icon1.png"></image>
+                </view>
+                <view class="li_txt b">如遇到填写问题，请点击主页在线客服按钮<text class="b" style="color:red" ></text> </view>
+        </view>
+</view>
+        <button hover-class="btn-class" wx:if="{{!disabled&&!loading}}"  open-type="getUserInfo" form-type="submit" class="opening">修改公告</button>
+        <button hover-class="btn-class" wx:else disabled="true" class="opening">您已修改成功</button>
+    
+    </form>
+</view>
+
+
+<view class='cu-load load-modal' wx:if="{{loadModal}}">
+  <image src='https://7465-test-aam3w-1300056547.tcb.qcloud.la/CUP/cuplogo.jpg?sign=8042ec69872545d8e6615d1e9e100f69&t=1586532185' class='png' mode='aspectFit'></image>
+  <view class='gray-text'>爬呀爬...</view>
+</view>

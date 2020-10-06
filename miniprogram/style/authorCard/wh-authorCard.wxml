@@ -1,0 +1,17 @@
+<!-- 蒙版效果 -->
+<view class="mask" hidden="{{isHidden}}" catchtap="closeMask">
+    <view class="masks" catchtap="prevent" animation="{{ani}}">
+        <view class="box">
+            <image class="leftImage" mode="widthFix" src="http://yanxuan.nosdn.127.net/eb2697a360243e29fe9b7ecbb31f8112.jpg"></image>
+            <view class="right">
+                <view class="title">
+                    <text class="name">excel表下载连接</text>
+                </view>
+                <view class="info">
+                    <view class="field">点击即可复制excel下载链接</view>
+                    <view class="value">{{link}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

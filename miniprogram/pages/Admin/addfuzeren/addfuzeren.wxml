@@ -1,0 +1,51 @@
+<!--pages/index/create_enterprise.wxml-->
+<view class="bigbox">
+    <form bindsubmit="submit_data">
+        <view class="inp_list">
+            <view class="inp_li">
+                <view class="li_left b li_before">{{name}}登录账号</view>
+                <view class="li_right">
+                    <input   class="input" name="adminID"  value="{{ adminID }}" placeholder="请填写{{name}}序号" placeholder-class="place_txt"></input>
+                </view>
+            </view>
+
+            
+            <view class="inp_li">
+                <view class="li_left b li_before">{{name}}姓名</view>
+                <view class="li_right">
+                    <input  class="input" name="fuzeren" value="{{ fuzeren }}" maxlength="15" placeholder="例如:高涵、张东明" placeholder-class="place_txt"></input>
+                </view>
+            </view>
+           <view class="inp_li">
+                <view class="li_left b li_before">{{name}}登录密码</view>
+                <view class="li_right">
+                    <input class="input" name="passward" value="{{ passward }}" placeholder="填写分配的登陆密码" placeholder-class="place_txt"></input>
+                </view>
+            </view>
+            <view class="inp_li" wx:if="{{admin==1}}">
+                <view class="li_left b li_before">辅导员</view>
+                <view class="li_right">
+                    <input disabled="true" class="input" name="fudaoyuan" value="{{ fudaoyuan }}" placeholder="请选择辅导员姓名" placeholder-class="place_txt"></input>
+                </view>
+            </view>
+        
+
+            <view class="inp_li">
+                <view class="li_left b li_before">学院</view>
+                <view class="li_right">
+                    <input disabled="true" class="input" name="college" value="{{ college }}" placeholder="请选择学院" placeholder-class="place_txt"></input>
+                </view>
+            </view>
+
+        </view>
+
+      
+        <button hover-class="btn-class"  form-type="submit" class="opening">确认添加</button>
+    </form>
+</view>
+
+
+<view class='cu-load load-modal' wx:if="{{loadModal}}">
+  <image src='https://7465-test-aam3w-1300056547.tcb.qcloud.la/CUP/cuplogo.jpg?sign=8042ec69872545d8e6615d1e9e100f69&t=1586532185' class='png' mode='aspectFit'></image>
+  <view class='gray-text'>上传中...</view>
+</view>
